@@ -271,7 +271,7 @@ $(function(){
 							</c:if>
 							<c:if test="${order.orderstate!=2}">
 							<button class="order_state_btn" id="my_ll_w" style="font-size: 18px;"
-							onclick="location.href='orderstateUpdate.store?orderno=${order.orderno}&orderstate=2'">배송준비중</button>
+							onclick="location.href='orderstateUpdate.store?orderno=${order.orderno}&orderstate=2&itemnum=${order.itemnum}'">배송준비중</button>
 							</c:if>
 							<br class="desktop_br">
 							<c:if test="${order.orderstate!=3}">

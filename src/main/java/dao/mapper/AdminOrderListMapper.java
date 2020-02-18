@@ -16,7 +16,7 @@ public interface AdminOrderListMapper {
 	int count(Map<String, Object> param);
 
 	@Select({ "<script>"
-			+ " SELECT OL.orderno, OI.price, OI.quantity, I.itemname, I.itemfile1url, OL.orderdate, OL.orderstate"
+			+ " SELECT OL.orderno, OI.itemnum, OI.price, OI.quantity, I.itemname, I.itemfile1url, OL.orderdate, OL.orderstate"
 			+ " FROM orderlist OL JOIN orderitem OI" + " ON OL.orderno = OI.orderno" + " JOIN item I "
 			+ " ON OI.itemnum = I.itemnum" + "<if test='orderstate!=null'>" + " where OL.orderstate = #{orderstate}"
 			+ "</if>"

@@ -51,10 +51,10 @@ public class WhousingDao {
 		param.put("itemnum", itemnum);
 		param.put("whousingnum", ++whousingnum);
 		sqlSession.getMapper(WhousingMapper.class).whousing_st_insert(param);
-		param.put("whousingnum", whousingnum + 1);
-		sqlSession.getMapper(WhousingMapper.class).whousing_in_insert(param);
-		param.put("whousingnum", whousingnum + 2);
-		sqlSession.getMapper(WhousingMapper.class).whousing_out_insert(param);
+//      param.put("whousingnum",whousingnum+1);
+//      sqlSession.getMapper(WhousingMapper.class).whousing_in_insert(param);
+//      param.put("whousingnum",whousingnum+2);
+//      sqlSession.getMapper(WhousingMapper.class).whousing_out_insert(param); 
 	}
 
 	public List<Whousing> out() {

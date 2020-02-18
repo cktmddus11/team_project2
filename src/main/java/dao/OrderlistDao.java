@@ -104,9 +104,10 @@ public class OrderlistDao {
 			
 	}
 
-	public Orderitem orderlist_out(String orderno) {
+	public Orderitem orderlist_out(String orderno, int itemnum) {
 		param.clear();
 		param.put("orderno",  orderno);
+		param.put("itemnum",  itemnum);
 		return sqlSession.getMapper(OrderlistMapper.class).orderlist_out(param);
 	}
 

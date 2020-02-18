@@ -143,10 +143,10 @@ input.sel_delete {
 				checked> 
 				<label for="ex_chk" style="margin-bottom: 20px;">전체</label> 
 			</div>
-			<div class="checks_delete">
+			<!-- <div class="checks_delete">
 				<span class="selects">1개 선택&nbsp;</span>
 				<button type="button" class="delete_btn"></button>
-			</div>
+			</div> -->
 		</div>
 		<div>
 			<div class="admin_list_no">

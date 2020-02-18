@@ -67,7 +67,7 @@ public class Admin_ChangeController {
          return mav;
       }
    @RequestMapping("chg_state_yn")
-   public ModelAndView chg_state_yn(Integer chg_no,Integer yn,String chg_orderno,HttpServletRequest request,HttpSession session) {
+   public ModelAndView chg_state_yn(Integer chg_no,Integer yn, Integer itemnum, String chg_orderno,HttpServletRequest request,HttpSession session) {
       ModelAndView mav = new ModelAndView();
       Chg chg = service.Chg(chg_no,request);
       try {
@@ -77,7 +77,7 @@ public class Admin_ChangeController {
         	 service.orderstate_chg(chg_orderno);
         	 // 불량 상태의 재고 생김
         	 Date currentTime = new Date();
-        	 Orderitem oi =service.orderlist_out(chg_orderno);
+        	 Orderitem oi =service.orderlist_out(chg_orderno, itemnum);
         	 service.chg_w_bad_insert(oi.getItemnum(),oi.getPrice(),oi.getQuantity(),currentTime);
         	 // 환불-> 재고 상태 돈 - 환불할 가격
         	 service.chg_w_bad_update(oi.getItemnum(),oi.getPrice(),oi.getQuantity(),currentTime);

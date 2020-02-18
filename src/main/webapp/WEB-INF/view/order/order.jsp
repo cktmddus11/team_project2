@@ -541,7 +541,7 @@
 									<li class="pay_list_space pay_list_space_all"><strong
 										class="point pay_info_list"id="my_ll_b">포인트 <span
 											class="point_op" id="my_ll_b"  >
-											(<fmt:formatNumber value="${SessionScope.totalpoint }" pattern="#,###P"/>)
+											(<fmt:formatNumber value="${sessionScope.totalpoint }" pattern="#,###P"/>)
 											</span>
 									</strong>
 										<div class="point_bank" >

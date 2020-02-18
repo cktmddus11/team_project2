@@ -73,18 +73,19 @@ public class Admin_OrderController {
       }
    
    @RequestMapping("orderstateUpdate.store")
-   public ModelAndView orderstateUpdate(String orderno,int orderstate, HttpServletRequest request) {
+   public ModelAndView orderstateUpdate(String orderno,int orderstate, Integer itemnum, HttpServletRequest request) {
       ModelAndView mav = new ModelAndView();
       try {
          service.admin_orderstateUpdate(orderno,orderstate,"in-shipping");
          if(orderstate==2) {
-        	 Orderitem oi =service.orderlist_out(orderno);
+        	// System.out.println(orderno);
+        	 Orderitem oi =service.orderlist_out(orderno, itemnum);
         	 Date currentTime = new Date();
         	 service.order_whousing_outWrite
         	 	(oi.getItemnum(),oi.getPrice(),oi.getQuantity(),currentTime);
-        	 
         	 service.order_whousing_outUpdate
         	 	(oi.getItemnum(),oi.getPrice(),oi.getQuantity(),currentTime);
+        	 
          }
          mav.setViewName("redirect:orderstate.store");
       }catch (Exception e) {

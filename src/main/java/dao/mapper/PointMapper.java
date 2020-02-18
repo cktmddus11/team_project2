@@ -18,7 +18,7 @@ public interface PointMapper {
    		+ "order by pointnum desc , pointnum limit #{startrow},#{limit}")
    List<Point> select(Map<String, Object> param);
 
-   @Select(" select sum(point) from point where userid=#{kemail}")
+   @Select("select sum(point) from point where userid=#{kemail}")
    int totalpoint(Map<String, Object> param);
    
    @Insert(" insert into point"

@@ -636,8 +636,8 @@ public class ShopService {
 	public void orderstate_chg(String chg_orderno) {
 		orderlistDao.orderstate_chg(chg_orderno);
 	}
-	public Orderitem orderlist_out(String orderno) {
-		return orderlistDao.orderlist_out(orderno);
+	public Orderitem orderlist_out(String orderno, Integer itemnum) {
+		return orderlistDao.orderlist_out(orderno, itemnum);
 	}
 
 	public void chg_w_bad_insert(int itemnum, int price, int quantity, Date currentTime) {

@@ -66,6 +66,8 @@ public class OrderController {
 			i.setQuantity(oquantity);
 			i.setPrice(oprice);
 			List<ItemSet> directlist = new ArrayList<ItemSet>();
+			int totalpoint =service.totalpoint(user.getUserid());
+			session.setAttribute("totalpoint", totalpoint);
 			directlist.add(i);
 			//mav.addObject("orderitems", directlist);
 			session.setAttribute("orderitems", directlist);

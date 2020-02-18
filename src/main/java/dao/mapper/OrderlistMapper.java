@@ -64,9 +64,10 @@ public interface OrderlistMapper {
 			+ " values (#{itemnum}, #{orderno}, #{quantity}, #{price}, #{userid})")
 	void insertorderitem(Map<String, Object> param);
 	
-	@Select(" SELECT itemnum, quantity, price"
+	@Select("<script>SELECT itemnum, quantity, price"
 			+ " FROM orderitem "
-			+ " WHERE orderno=#{orderno}")
+			+ " WHERE orderno=#{orderno} "
+			+ "<if test='itemnum != null'>and itemnum = #{itemnum}</if></script>")
 	Orderitem orderlist_out(Map<String, Object> param);
 
 	@Update(" update orderlist set orderstate=6, status='re-order'"
